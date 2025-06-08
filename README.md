@@ -27,8 +27,7 @@ A packaged Spoon version of the mouse movement and auto-scrolling functionality 
 - Same core functionality as MouseToScrollBar.lua but in a reusable module
 - Provides start/stop methods for controlling the functionality
 - Includes detailed console logging for debugging
-- Menubar icon with click-to-toggle functionality and dropdown menu
-- Graphical settings interface accessible via keyboard shortcut (Cmd+Alt+S) or menubar menu
+- Graphical settings interface accessible via keyboard shortcut (Cmd+Alt+M) -- it would be good to set this up as menu bar item on mac, but haven't implemented this yet. 
 - Persistent settings and state storage across Hammerspoon restarts
 
 **Usage:**
@@ -46,9 +45,7 @@ spoon.MoveMousetoScrollBar:setConfig({
     edgeBuffer = 40             -- Don't move mouse if already close to right edge (in pixels)
 })
 
--- Settings can also be accessed via the GUI by:
--- 1. Clicking on the menubar icon and selecting "Open Settings..."
--- 2. Using the keyboard shortcut Cmd+Alt+S
+-- Settings can also be accessed via the GUI by using the keyboard shortcut Cmd+Alt+M
 ```
 
 ### FB_Call.spoon
@@ -70,7 +67,7 @@ spoon.FB_Call:start()
 
 1. Install [Hammerspoon](https://www.hammerspoon.org/) if you haven't already
 2. Clone this repository to your local machine
-3. Copy the scripts or Spoons to your Hammerspoon configuration directory (`~/.hammerspoon/`)
+3. Copy the scripts or Spoons to your Hammerspoon configuration directory (`~/.hammerspoon/`) - you can find it manually by opening the Finder application, then hitting Command + Shift + G to search Finder and type in Hammerspoon or Spoons. 
 4. Add the necessary `require` or `hs.loadSpoon()` calls to your `init.lua`
 
 ## Configuration
@@ -96,6 +93,9 @@ The settings interface provides:
   - Reset to Defaults: Returns all settings to their default values
   - Cancel: Closes the settings window without saving changes
   - Save Settings: Applies and saves all current settings
+ 
+    ![image](https://github.com/user-attachments/assets/55499a8d-94d4-46b7-93c9-b6c994eb1317)
+
 
 All settings are automatically saved using Hammerspoon's persistent storage system and will be remembered across Hammerspoon restarts. The spoon also temporarily stops auto-movement while the settings interface is open to prevent interference with configuration.
 
