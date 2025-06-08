@@ -2,6 +2,13 @@
 
 A collection of Lua scripts for the [Hammerspoon](https://www.hammerspoon.org/) automation tool for macOS. These scripts provide various utilities to enhance productivity and automate repetitive tasks.
 
+## Installation
+
+1. Install [Hammerspoon](https://www.hammerspoon.org/) if you haven't already
+2. Clone this repository to your local machine
+3. Copy the scripts or Spoons to your Hammerspoon configuration directory (`~/.hammerspoon/`) - you can find it manually by opening the Finder application, then hitting Command + Shift + G to search Finder and type in Hammerspoon or Spoons. 
+4. Add the necessary `require` or `hs.loadSpoon()` calls to your `init.lua`
+
 ## Scripts Overview
 
 ### MoveMousetoScrollBar.spoon
@@ -34,28 +41,6 @@ spoon.MoveMousetoScrollBar:setConfig({
 -- Settings can also be accessed via the GUI by using the keyboard shortcut Cmd+Alt+M
 ```
 
-### FB_Call.spoon
-
-A utility Spoon that provides a keyboard shortcut for tabbing through form fields and submitting.
-
-**Features:**
-- Creates a hotkey (Cmd+Alt+T) that presses the Tab key 30 times
-- Automatically presses Enter/Return after tabbing
-- Useful for quickly navigating through form fields
-
-**Usage:**
-```lua
-hs.loadSpoon("FB_Call")
-spoon.FB_Call:start()
-```
-
-## Installation
-
-1. Install [Hammerspoon](https://www.hammerspoon.org/) if you haven't already
-2. Clone this repository to your local machine
-3. Copy the scripts or Spoons to your Hammerspoon configuration directory (`~/.hammerspoon/`) - you can find it manually by opening the Finder application, then hitting Command + Shift + G to search Finder and type in Hammerspoon or Spoons. 
-4. Add the necessary `require` or `hs.loadSpoon()` calls to your `init.lua`
-
 ## Configuration
 
 ### Basic Configuration
@@ -81,6 +66,21 @@ The settings interface provides:
   - Save Settings: Applies and saves all current settings
  
     ![image](https://github.com/user-attachments/assets/55499a8d-94d4-46b7-93c9-b6c994eb1317)
+
+### FB_Call.spoon
+
+A utility Spoon that provides a keyboard shortcut for tabbing through form fields and submitting.
+
+**Features:**
+- Creates a hotkey (Cmd+Alt+T) that presses the Tab key 30 times
+- Automatically presses Enter/Return after tabbing
+- Useful for quickly navigating through form fields
+
+**Usage:**
+```lua
+hs.loadSpoon("FB_Call")
+spoon.FB_Call:start()
+```
 
 
 All settings are automatically saved using Hammerspoon's persistent storage system and will be remembered across Hammerspoon restarts. The spoon also temporarily stops auto-movement while the settings interface is open to prevent interference with configuration.
