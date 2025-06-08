@@ -4,20 +4,6 @@ A collection of Lua scripts for the [Hammerspoon](https://www.hammerspoon.org/) 
 
 ## Scripts Overview
 
-### MouseToScrollBar.lua
-
-A standalone script that automatically moves the mouse cursor to the right side of the screen (near the scrollbar area) and performs auto-scrolling.
-
-**Features:**
-- Automatically moves the mouse cursor to the right side of the screen when inactive
-- Implements a trigger zone on the bottom-right portion of the screen
-- Auto-scrolls when the mouse is in the trigger zone
-- Includes debugging output in the Hammerspoon console
-- Configurable scrolling speed and position
-
-**Usage:**
-Load this script in Hammerspoon to enable automatic mouse movement and scrolling.
-
 ### MoveMousetoScrollBar.spoon
 
 A packaged Spoon version of the mouse movement and auto-scrolling functionality with additional enhancements. 
@@ -105,6 +91,20 @@ Each setting has input validation to ensure values are within appropriate ranges
 - Vertical position: 0.01 to 0.99 (fraction of screen height)
 - Trigger zone start: 0.001 to 0.9 (fraction of screen width)
 - Edge buffer: 0 to 200 pixels
+
+### MouseToScrollBar.lua
+
+A standalone script that automatically moves the mouse cursor to the right side of the screen (near the scrollbar area) and performs auto-scrolling, it's more barebones than the packaged spoon; lacking the pause function via fn key, and the settings GUI. 
+
+**Features:**
+- Automatically moves the mouse cursor to the right side of the screen when inactive
+- Implements a trigger zone on the bottom-right portion of the screen
+- Auto-scrolls when the mouse is in the trigger zone
+- Includes debugging output in the Hammerspoon console
+- Configurable scrolling speed and position
+
+**Usage:**
+Load this script in Hammerspoon to enable automatic mouse movement and scrolling.
 
 ## License
 
