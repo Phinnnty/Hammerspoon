@@ -1,34 +1,8 @@
 # Mouse to Scroll Bar
 
-## Script Overview
-
-A packaged Spoon version of the mouse movement and auto-scrolling functionality with additional enhancements. 
-
-**Features:**
-- Structured as a proper Hammerspoon Spoon for better organization
-- Same core functionality as MouseToScrollBar.lua but in a reusable module
-- Provides start/stop methods for controlling the functionality
-- Includes detailed console logging for debugging
-- Graphical settings interface accessible via keyboard shortcut (Cmd+Alt+M) -- it would be good to set this up as menu bar item on mac, but haven't implemented this yet. 
-- Persistent settings and state storage across Hammerspoon restarts
-
-**Usage:**
-```lua
-hs.loadSpoon("MoveMousetoScrollBar")
-spoon.MoveMousetoScrollBar:start()
-
--- Optional: Configure settings programmatically
-spoon.MoveMousetoScrollBar:setConfig({
-    disableKey = "fn",          -- Key to hold to temporarily disable mouse movement
-    checkInterval = 0.375,      -- How frequently to check mouse position (in seconds)
-    scrollBarOffset = 20,       -- Distance from the right edge to position the mouse (in pixels)
-    verticalPosition = 0.85,    -- Relative position down the screen (0.0-1.0)
-    triggerZoneStart = 0.01,    -- How far from left edge to start checking (as fraction of screen width)
-    edgeBuffer = 40             -- Don't move mouse if already close to right edge (in pixels)
-})
-
--- Settings can also be accessed via the GUI by using the keyboard shortcut Cmd+Alt+M
-```
+- This spoon was specifically designed for users with accessibility needs who use eye tracking
+- software to control their mouse. It helps by automatically positioning the mouse near the 
+- scrollbar area when the mouse hasn't been moved manually, making it easier to scroll through content.
 
 ## Configuration
 
@@ -56,6 +30,24 @@ The settings interface provides:
  
     ![image](https://github.com/user-attachments/assets/55499a8d-94d4-46b7-93c9-b6c994eb1317)
 
+    **Usage:**
+```lua
+hs.loadSpoon("MoveMousetoScrollBar")
+spoon.MoveMousetoScrollBar:start()
+
+-- Optional: Configure settings programmatically
+spoon.MoveMousetoScrollBar:setConfig({
+    disableKey = "fn",          -- Key to hold to temporarily disable mouse movement
+    checkInterval = 0.375,      -- How frequently to check mouse position (in seconds)
+    scrollBarOffset = 20,       -- Distance from the right edge to position the mouse (in pixels)
+    verticalPosition = 0.85,    -- Relative position down the screen (0.0-1.0)
+    triggerZoneStart = 0.01,    -- How far from left edge to start checking (as fraction of screen width)
+    edgeBuffer = 40             -- Don't move mouse if already close to right edge (in pixels)
+})
+
+-- Settings can also be accessed via the GUI by using the keyboard shortcut Cmd+Alt+M
+```
+
 ## Installation
 
 1. Install [Hammerspoon](https://www.hammerspoon.org/) if you haven't already
@@ -71,7 +63,6 @@ Each setting has input validation to ensure values are within appropriate ranges
 - Vertical position: 0.01 to 0.99 (fraction of screen height)
 - Trigger zone start: 0.001 to 0.9 (fraction of screen width)
 - Edge buffer: 0 to 200 pixels
-
 
 ## License
 
