@@ -64,6 +64,8 @@ spoon.MoveMousetoScrollBar:setConfig({
 | triggerZoneStart | 0.01 | How far from left edge to start checking (fraction of screen width) |
 | edgeBuffer | 40 | Don't move mouse if already close to right edge (pixels) |
 
+ ![image](https://github.com/user-attachments/assets/55499a8d-94d4-46b7-93c9-b6c994eb1317)
+
 ## How It Works
 
 1. The spoon regularly checks if the mouse has moved since the last check
